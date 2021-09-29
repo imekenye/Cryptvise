@@ -1,9 +1,22 @@
-import { Header, Services, World } from '../components';
+import { useState, useEffect } from 'react';
+import { AboutUs, Header, PreLoader, Services, World } from '../components';
 import Hero from '../components/Hero/Hero';
 import Layout from '../components/Layout';
 import Head from 'next/head';
+import Footer from '../components/common/Footer';
+import { AnimateSharedLayout } from 'framer-motion';
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+  const delay = 5;
+
+  useEffect(() => {
+    let timer1 = setTimeout(() => setIsLoading(false), delay * 1000);
+
+    return () => {
+      clearTimeout(timer1);
+    };
+  }, []);
   return (
     <>
       <Head>
@@ -31,10 +44,15 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-      <Header />
-      <Hero />
-      <World />
-      <Services />
+      <AnimateSharedLayout>
+        {isLoading && <PreLoader />}
+        <Header />
+        <Hero />
+        <World />
+        <Services />
+        <AboutUs />
+        <Footer />
+      </AnimateSharedLayout>
     </>
   );
 }

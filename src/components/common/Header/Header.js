@@ -1,11 +1,15 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 function Header() {
   return (
-    <nav className=" mx-[56px] border-b border-white h-[72px] flex items-center justify-between ">
-      <div className="logo">
-        <img src="/logo.svg" alt="" />
-      </div>
+    <nav
+      layoutId="navborder"
+      className=" mx-[56px] border-b border-white h-[72px] flex items-center justify-between "
+    >
+      <motion.div layoutId="logo" className="logo">
+        <motion.img src="/logo.svg" alt="" />
+      </motion.div>
       <ul className="flex items-center space-x-4 text-white">
         <li>
           <a href="#">Home</a>
