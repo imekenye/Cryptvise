@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { LeftArrow, RightArrow, ServiceIcon } from '../Icons';
 import Ai from '../Icons/Ai';
 import Atm from '../Icons/Atm';
@@ -11,16 +11,25 @@ import AnimatedWave from '../AnimatedWave';
 function Services() {
   const { inView, entry, ref } = useInView();
   const animationControl = useAnimation();
-  if (inView) {
-    animationControl.start({
-      y: 0,
-      opacity: 1,
-      transition: {
-        delay: 0.7,
-        damping: 20,
-      },
-    });
-  }
+  useEffect(() => {
+    if (inView) {
+      animationControl.start({
+        opacity: 1,
+        scale: 1,
+        transition: {
+          delay: 0.7,
+          damping: 20,
+          ease: [0.17, 0.67, 0.83, 0.67],
+        },
+      });
+    }
+    if (!inView) {
+      animationControl.start({
+        scale: 0,
+        opacity: 0,
+      });
+    }
+  }, [inView]);
   return (
     <div className="relative h-screen  services  bg-[#ECECEC]">
       <div className="absolute left-0 z-20 w-full -bottom-0">
@@ -40,10 +49,6 @@ function Services() {
         className="absolute z-20 flex flex-col justify-center items-center m-auto w-full py-[10%] "
       >
         <motion.div
-          initial={{
-            y: '100vh',
-            opacity: 0,
-          }}
           animate={animationControl}
           className="flex items-center justify-center space-x-4 icons"
         >
