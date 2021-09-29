@@ -2,7 +2,7 @@ import React from 'react';
 
 function Header() {
   return (
-    <nav className="border-b border-white h-[72px] flex items-center justify-between ">
+    <nav className=" mx-[56px] border-b border-white h-[72px] flex items-center justify-between ">
       <div className="logo">
         <img src="/logo.svg" alt="" />
       </div>

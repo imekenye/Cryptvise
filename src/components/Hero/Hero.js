@@ -2,8 +2,8 @@ import React from 'react';
 
 function Hero() {
   return (
-    <div className="h-full text-center my-[5%] relative">
-      <div className="absolute z-10 w-full">
+    <div className="relative  h-screen text-center py-[10%]">
+      <div className="absolute z-20 w-full">
         <div className="font-light hero__display">
           <h1 className="text-[64px] text-white">Cryptvise</h1>
           <span className="text-[64px] text-text-color1">

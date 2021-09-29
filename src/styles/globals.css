@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  height: 100%;
+}
+body {
+  @apply font-body;
+  position: relative;
+  margin: 0;
+  background: linear-gradient(180deg, #52dbea 1.56%, #56ccf2 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+#__next {
+  @apply min-h-screen;
+}
+
+.layout {
+  @apply flex flex-col h-screen;
+  background: linear-gradient(180deg, #52dbea 1.56%, #56ccf2 100%);
+}
