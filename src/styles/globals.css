@@ -12,6 +12,7 @@ body {
   background: linear-gradient(180deg, #52dbea 1.56%, #56ccf2 100%);
   background-repeat: no-repeat;
   background-attachment: fixed;
+  cursor: none;
 }
 #__next {
   @apply min-h-screen;

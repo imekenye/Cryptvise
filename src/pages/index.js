@@ -1,5 +1,12 @@
 import { useState, useEffect } from 'react';
-import { AboutUs, Header, PreLoader, Services, World } from '../components';
+import {
+  AboutUs,
+  CustomCursor,
+  Header,
+  PreLoader,
+  Services,
+  World,
+} from '../components';
 import Hero from '../components/Hero/Hero';
 import Layout from '../components/Layout';
 import Head from 'next/head';
@@ -44,6 +51,7 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
+      <CustomCursor />
       <AnimateSharedLayout>
         {isLoading && <PreLoader />}
         <Header />
